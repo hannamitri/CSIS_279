@@ -1,0 +1,70 @@
+import axios from "axios";
+
+let baseUrl = `http://localhost:3001`
+
+const getAll = async () => {
+    let url = `${baseUrl}/getAll`
+    return await axios.get(url).then(response => response).catch(err => err.response)
+}
+
+
+const update = async (data) => {
+    
+    let url = `${baseUrl}/updateUser`
+    return await axios.post(url, data).then(response => response).catch(err => err.response)
+}
+
+const insertUser = async (data) => {
+    // console.log("test " + data)
+    let url = `${baseUrl}/insertUser`
+    return await axios.post(url, data).then(response => response).catch(err => err.response)
+
+
+}
+const deleteR = async () => {
+    let url = `${baseUrl}/deleteRace`
+    return await axios.get(url).then(response => response).catch(err => err.response)
+
+}
+
+const deleteUser = async (data) => {
+    console.log(data);
+    let url = `${baseUrl}/deleteUser`;
+
+    return await axios.post(url, data).then(response => response).catch(err => err.response)
+
+}
+
+
+const getAllCountry = async () => {
+    let url = `${baseUrl}/getAllCountry`
+    return await axios.get(url).then(response => response).catch(err => err.response)
+}
+
+
+const getAllContinent = async () => {
+    let url = `${baseUrl}/getAllContinent`
+    return await axios.get(url).then(response => response).catch(err => err.response)
+
+}
+
+const getAllContinentPoint = async () => {
+    let url = `${baseUrl}/getAllContinentPoint`
+    return await axios.get(url).then(response => response).catch(err => err.response)
+
+}
+
+
+
+
+export {
+    getAll,
+    
+    update,
+    insertUser,
+    deleteUser,
+    getAllCountry,
+    getAllContinent,
+    getAllContinentPoint,
+    // getCountryCode,
+}
