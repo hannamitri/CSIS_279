@@ -20,6 +20,7 @@ const loadUsers = (res) => {
 
 const test = () => {
     console.log("Thttps://github.com/charbelfakhry/CSIS_279");
+    console.log("another test")
 }
 
 
