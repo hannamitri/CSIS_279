@@ -18,6 +18,10 @@ const loadUsers = (res) => {
     })
 }
 
+const test = () => {
+    console.log("Test");
+}
+
 
 
 
