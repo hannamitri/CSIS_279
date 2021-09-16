@@ -7,8 +7,29 @@ const connection = require('../config/database.config.js');
 
 
 exports.getAll = async (req, res) => {
-    
+    let tableName = "users";
+    let sql = `SELECT * FROM ${tableName}`;
+    connection.query(sql, (error, result)=>{
+        if(error) throw error;
+        res.status(200).send(result);
+    })
 
+}
+
+const createUsers = () =>{
+    let sqls = [];
+    for(let i = 0; i < 10; i++){
+        let sql = `INSERT INTO USERS (user_name, user_username, user_password, user_occupation, user_age, user_hobby) values \
+        ("name${i}", "username${i}", "password${i}", "occupation${i}", "age${i}", "hobby${i}")`;
+        sqls.push(sql);
+    }
+
+    for(let i in sqls){
+        const query = sqls[i];
+        connection.query(query, (error, result)=>{
+            if(error) throw error;
+        });
+    }
 }
 
 const loadUsers = (res) => {
