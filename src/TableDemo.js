@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { getAll } from "./api/api";
 import Form from "./Form";
 
 class TableDemo extends Component {
@@ -9,9 +10,21 @@ class TableDemo extends Component {
          }
     }
 
+    /**
+     * This is the first method to be called.
+     */
     componentDidMount(){
         
         this.setState({name: "Test name"});
+
+        this.loadUsers();
+    }
+
+    loadUsers = async() =>{
+        
+        const data = await getAll();
+        console.log(data);
+        console.log("after the await.")
     }
 
     btn_clickHandler = (e) => {

@@ -7,7 +7,8 @@ const connection = require('../config/database.config.js');
 
 
 exports.getAll = async (req, res) => {
-    res.status(200).send({msg: "hello from the server."})
+    
+
 }
 
 const loadUsers = (res) => {

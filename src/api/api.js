@@ -3,7 +3,7 @@ import axios from "axios";
 let baseUrl = `http://localhost:3001`
 
 const getAll = async () => {
-    let url = `${baseUrl}/getAll`
+    let url = `${baseUrl}/getAllUsers`
     return await axios.get(url).then(response => response).catch(err => err.response)
 }
 
@@ -21,11 +21,7 @@ const insertUser = async (data) => {
 
 
 }
-const deleteR = async () => {
-    let url = `${baseUrl}/deleteRace`
-    return await axios.get(url).then(response => response).catch(err => err.response)
 
-}
 
 const deleteUser = async (data) => {
     console.log(data);
@@ -59,7 +55,6 @@ const getAllContinentPoint = async () => {
 
 export {
     getAll,
-    
     update,
     insertUser,
     deleteUser,
