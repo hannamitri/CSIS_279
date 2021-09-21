@@ -40,6 +40,36 @@ class TableDemo extends Component {
         this.setState({name: "name was changed"});
     }
 
+    loopData = () => {
+        const {data} = this.state;
+        let rows = [];
+
+        data.forEach(element => {
+            
+        });
+
+        for(let i in data){
+            console.log(data[i]);
+        }
+        
+
+        for(let i = 0 ; i < data.length; i++)
+        {
+            rows.push(
+                <tr key={i}>
+                    <td>{data[i].user_name}</td>
+                    <td>{data[i].user_username}</td>
+                    <td>{data[i].user_password}</td>
+                    <td>{data[i].user_occupation}</td>
+                    <td>{data[i].user_age}</td>
+                    <td>{data[i].user_hobby}</td>
+                </tr>
+            )
+        }
+
+        return rows;
+    }
+
 
     render() { 
         return (  
@@ -58,18 +88,19 @@ class TableDemo extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.data.map((item, index)=>{
-                                return(
-                                    <tr key={index}>
-                                        <td>{item.user_name}</td>
-                                        <td>{item.user_username}</td>
-                                        <td>{item.user_password}</td>
-                                        <td>{item.user_occupation}</td>
-                                        <td>{item.user_age}</td>
-                                        <td>{item.user_hobby}</td>
-                                    </tr>
-                                )
-                            })
+                            this.loopData()
+                            // this.state.data.map((item, index)=>{
+                            //     return(
+                            //         <tr key={index}>
+                            //             <td>{item.user_name}</td>
+                            //             <td>{item.user_username}</td>
+                            //             <td>{item.user_password}</td>
+                            //             <td>{item.user_occupation}</td>
+                            //             <td>{item.user_age}</td>
+                            //             <td>{item.user_hobby}</td>
+                            //         </tr>
+                            //     )
+                            // })
                         }
                     </tbody>
                 </table>
