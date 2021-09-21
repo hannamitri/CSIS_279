@@ -82,12 +82,10 @@ exports.insertUser = (req, res) => {
 }
 
 exports.deleteUser = (req, res) => {
-    console.log(req.body)
-    const { id } = req.body
-    let sql = `delete from users WHERE user_id=${id}`;
+    const { user_id } = req.body
+    let sql = `delete from users WHERE user_id=${user_id}`;
+    console.log(sql);
     connection.query(sql, (err, result) => {
-
-
         if (err) throw err;
         res.status(200).send(result)
 

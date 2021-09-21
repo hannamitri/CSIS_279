@@ -24,9 +24,7 @@ const insertUser = async (data) => {
 
 
 const deleteUser = async (data) => {
-    console.log(data);
     let url = `${baseUrl}/deleteUser`;
-
     return await axios.post(url, data).then(response => response).catch(err => err.response)
 
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getAll } from './api/api';
+import { deleteUser, getAll } from './api/api';
  
 const TableFunc = () => {
 
@@ -12,6 +12,12 @@ const TableFunc = () => {
   
 
   const handleChange = event => setGreeting(event.target.value);
+
+  const deleteHandler = (item) => (event) =>{
+    deleteUser(item).then(res=>{
+      loadUsers();
+    });
+  }
   
   const loadUsers = async () => {
 
@@ -28,7 +34,7 @@ const TableFunc = () => {
       console.log(error);
     }
     finally{
-      
+
     }
   }
 
@@ -53,6 +59,7 @@ const TableFunc = () => {
             <th>Occupation</th>
             <th>Hobby</th>
             <th>Age</th>
+            <th>Del.</th>
           </tr>
         </thead>
         <tbody>
@@ -66,6 +73,7 @@ const TableFunc = () => {
                   <td>{item.user_occupation}</td>
                   <td>{item.user_hobby}</td>
                   <td>{item.user_age}</td>
+                  <td><button className="btn-sm btn-danger" onClick={deleteHandler(item)}>Del.</button></td>
                 </tr>
               )
             })
