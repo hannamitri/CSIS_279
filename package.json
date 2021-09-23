@@ -24,6 +24,7 @@
     "moment-timezone": "^0.5.33",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
     "node-schedule": "^2.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
