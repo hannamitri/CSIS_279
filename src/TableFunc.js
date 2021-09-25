@@ -38,7 +38,9 @@ const TableFunc = () => {
     }
   }
 
-  
+  const test = () => {
+    console.log("hey")
+  }
  
   return (
     <div>
