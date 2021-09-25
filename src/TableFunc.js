@@ -39,7 +39,7 @@ const TableFunc = () => {
   }
 
   const test = () => {
-    console.log("helloooo")
+    console.log("test test test")
   }
  
   return (
