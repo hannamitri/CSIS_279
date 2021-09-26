@@ -35,3 +35,5 @@ app.use('/', cors(), routes);
 app.listen(port, () => {
     console.log(`App server is listening at http://localhost:${port}`)
 })
+
+//hanna
